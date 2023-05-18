@@ -1,16 +1,21 @@
 package com.cruz.republicservices.data.remote.model
 
-data class DriversResponse(
-    val drivers: List<Driver>,
-    val routes: List<Route>
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
+data class DriversResponseDto(
+    val drivers: List<DriverDto>,
+    val routes: List<RouteDto>
 )
 
-data class Driver(
+@JsonClass(generateAdapter = true)
+data class DriverDto(
     val id: String,
     val name: String
 )
 
-data class Route(
+@JsonClass(generateAdapter = true)
+data class RouteDto(
     val id: Int,
     val type: String,
     val name: String
